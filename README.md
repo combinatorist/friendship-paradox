@@ -1,9 +1,8 @@
 # friendship-paradox
 A small python module to play with the friendship paradox:
 
-
-
 ![alt text](./friends.dot.png)
+
 "most likely your friends have more friends than you do (on average)"
 
 - [Wikipedia Topic](https://en.wikipedia.org/wiki/Friendship_paradox)
