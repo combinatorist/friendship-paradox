@@ -23,6 +23,8 @@ def parse_graph():
         assert len(words) == 2 # assuming the first and last word are nodes
         for edge in [words, list(reversed(words))]:
             friends[edge[0]].add(edge[-1])
+    print("\nFriends by person:")
+    pprint(dict(friends))
     return friends
 
 def count_friends(friends):
@@ -30,13 +32,12 @@ def count_friends(friends):
     counts friends per person
     """
     friend_count = dict((k, len(v)) for k, v in friends.items())
-    pprint(friend_count)
 
     average_friend_count = sum(friend_count.values()) / len(friend_count)
 
-    pprint("Friend counts:")
+    print("\nFriend counts:")
     pprint(friend_count)
-    pprint("Average friend count per person")
+    print("\nAverage friend count per person:")
     pprint(average_friend_count)
     return friend_count
 
@@ -52,9 +53,9 @@ def count_friend_of_friends(friends, friend_count):
 
     average_friend_of_friends = sum(friends_friends_avg.values()) / len(friends_friends_avg)
 
-    pprint("Each person's friends' average friend count:")
+    print("\nEach person's friends' average friend count:")
     pprint(friends_friends_avg)
-    pprint("Overall Average Friends' Average Friend count")
+    print("\nOverall Average Friends' Average Friend count:")
     pprint(average_friend_of_friends)
     return friends_friends_avg
 
