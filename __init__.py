@@ -20,9 +20,9 @@ def parse_graph():
     friends = defaultdict(set)
     for line in lines[1:-1]:
         words = re.findall(r'\w+', line)
-        assert len(words) in [2, 3] # assuming the first and last word are nodes
-        for nodes in [words, words.reverse()]:
-            friends[words[0]].add(words[-1])
+        assert len(words) == 2 # assuming the first and last word are nodes
+        for edge in [words, list(reversed(words))]:
+            friends[edge[0]].add(edge[-1])
     return friends
 
 def count_friends(friends):
