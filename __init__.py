@@ -38,12 +38,26 @@ def count_friends(friends):
     pprint(friend_count)
     pprint("Average friend count per person")
     pprint(average_friend_count)
+    return friend_count
 
-def count_friend_of_friends():
+def count_friend_of_friends(friends, friend_count):
     """
     counts everyone's friends' friends
     """
-    pass
+    friends_friends_avg = dict()
+    for person in friends.keys():
+        friends_friends_avg[person] = sum(friend_count[friend]
+            for friend in friends[person]
+        ) / friend_count[person]
+
+    average_friend_of_friends = sum(friends_friends_avg.values()) / len(friends_friends_avg)
+
+    pprint("Each person's friends' average friend count:")
+    pprint(friends_friends_avg)
+    pprint("Overall Average Friends' Average Friend count")
+    pprint(average_friend_of_friends)
+    return friends_friends_avg
 
 if __name__ == '__main__':
-    count_friends(parse_graph())
+    friends = parse_graph()
+    count_friend_of_friends(friends, count_friends(friends))
