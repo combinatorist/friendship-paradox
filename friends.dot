@@ -1,8 +1,8 @@
 graph second_tier {
-hub -- A
-A -- B
-B -- hub
-hub -- 1
-hub -- 2
-hub -- 3
+that_friend -- You
+You -- your_best_friend
+that_friend -- 1
+that_friend -- 2
+that_friend -- 3
+that_friend -- 4
 }
