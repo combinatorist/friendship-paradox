@@ -1,0 +1,8 @@
+graph second_tier {
+hub -- A
+A -- B
+B -- hub
+hub -- 1
+hub -- 2
+hub -- 3
+}
