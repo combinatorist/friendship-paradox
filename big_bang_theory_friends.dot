@@ -1,0 +1,15 @@
+graph big_bang {
+Sheldon -- Leonard
+Leonard -- Penny
+Penny -- Bernadette
+Raj -- Sheldon
+Sheldon -- Amy
+Amy -- Penny
+Sheldon -- Penny
+Leonard -- Raj
+Raj -- Howard
+Howard -- Sheldon
+Leonard -- Howard
+Howard -- Bernadette
+Amy -- Bernadette
+}
